@@ -1,12 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
+import flightIcon from "../assets/icons/flight.svg";
+import hotelIcon from "../assets/icons/hotel.svg";
+import activitiesIcon from "../assets/icons/activities.svg";
+import breakfastIcon from "../assets/icons/breakfast.svg";
+import carIcon from "../assets/icons/car.svg";
+import checkoutIcon from "../assets/icons/checkout.svg";
+import removeIcon from "../assets/icons/remove.svg";
 
 const ICON_OPTIONS = {
-  PlaneLanding: "/src/assets/icons/flight.svg",
-  Bed: "/src/assets/icons/hotel.svg",
-  Landmark: "/src/assets/icons/activities.svg",
-  Meals: "/src/assets/icons/breakfast.svg",
-  CarFront: "/src/assets/icons/car.svg",
-  Checkout: "/src/assets/icons/checkout.svg",
+  PlaneLanding: flightIcon,
+  Bed: hotelIcon,
+  Landmark: activitiesIcon,
+  Meals: breakfastIcon,
+  CarFront: carIcon,
+  Checkout: checkoutIcon,
 };
 
 const SECTION_OPTIONS = [
@@ -196,7 +203,7 @@ export default function DayCard({ id, dayNumber = 1, entries = [], onUpdate, onD
                     )}
                     {!previewMode && (
                       <button onClick={() => removeActivity(i, ai)} style={{ background: "transparent", border: "none", padding: 0 }}>
-                        <img src="/src/assets/icons/remove.svg" alt="Remove" width={12} height={12} />
+                        <img src={removeIcon} alt="Remove" width={12} height={12} />
                       </button>
                     )}
                   </div>

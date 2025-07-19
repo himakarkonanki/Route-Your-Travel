@@ -1,5 +1,6 @@
 import React from "react";
 import ComponentLibrary from "./ComponentLibrary";
+import starIcon from "../assets/icons/stars.svg";
 
 export default function LeftPanel() {
   return (
@@ -58,7 +59,7 @@ export default function LeftPanel() {
             }}
           >
             <img
-              src="/src/assets/icons/stars.png"
+              src={starIcon}
               alt="Library Icon"
               style={{ width: "20px", height: "20px" }}
             />

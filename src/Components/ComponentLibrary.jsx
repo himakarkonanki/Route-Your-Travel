@@ -1,16 +1,18 @@
 import { useDraggable } from "@dnd-kit/core";
+import fileIcon from "../assets/icons/files.svg";
+import calendarIcon from "../assets/icons/calendar.svg";
 
 export default function ComponentLibrary() {
   return (
     <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
       <DraggableComponent
         type="FrontPage"
-        icon="/src/assets/icons/files.svg"
+        icon={fileIcon}
         desc="Trip Cover Page"
       />
       <DraggableComponent
         type="Day"
-        icon="/src/assets/icons/calendar.svg"
+        icon={calendarIcon}
         desc="Itinerary Day"
       />
     </div>

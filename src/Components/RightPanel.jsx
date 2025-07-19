@@ -3,6 +3,7 @@ import { useDroppable } from "@dnd-kit/core";
 import FrontPageCard from "./FrontPageCard";
 import DayCard from "./DayCard";
 import TermsAndConditionsCard from "./TermsAndConditionsCard";
+import deleteIcon from "../assets/icons/delete.svg";
 
 const RightPanel = forwardRef(({ items, setItems, previewMode = false }, ref) => {
   const { setNodeRef, isOver } = useDroppable({ id: "canvas" });
@@ -88,7 +89,7 @@ const RightPanel = forwardRef(({ items, setItems, previewMode = false }, ref) =>
                   style={trashButtonStyle}
                 >
                   <img
-                    src="/src/assets/icons/delete.svg"
+                    src={deleteIcon}
                     alt="Delete"
                     width={16}
                     height={16}
