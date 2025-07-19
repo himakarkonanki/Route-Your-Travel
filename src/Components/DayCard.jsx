@@ -25,7 +25,7 @@ const SECTION_OPTIONS = [
   { value: "Checkout", label: "Checkout", heading: "Check-out from Hotel" },
 ];
 
-export default function DayCard({ id, dayNumber = 1, entries = [], onUpdate, onDelete, previewMode = false }) {
+export default function DayCard({ id, dayNumbers = 1, entries = [], onUpdate, onDelete, previewMode = false }) {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
   const dropdownRef = useRef(null);
 
@@ -145,7 +145,7 @@ export default function DayCard({ id, dayNumber = 1, entries = [], onUpdate, onD
 
       <div style={{ flex: 1, fontFamily: "Arial", fontSize: "14px", display: "flex", flexDirection: "column", gap: "32px" }}>
         <div style={{ fontWeight: "bold", fontSize: "16px", textTransform: "uppercase", color: "#db2777" }}>
-          Day {dayNumber}
+          Day {dayNumbers}
         </div>
 
         {entry.sections.map((section, i) => (
