@@ -81,7 +81,7 @@ export default function LeftPanel() {
                 margin: 0,
               }}
             >
-              Drag to create your itinerary
+              Drag to Create Your Itinerary
             </p>
           </div>
         </div>
