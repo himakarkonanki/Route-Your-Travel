@@ -231,14 +231,13 @@ export default function DayCard({ id, dayNumber = 1, entries = [], onUpdate, onD
             ) : (
               <input value={table.heading} onChange={(e) => updateTable(tIndex, "heading", e.target.value)} style={{ fontSize: "16px", fontWeight: "bold", color: "#7e22ce", borderBottom: "1px solid #d1d5db", outline: "none" }} />
             )}
-
-            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px", border: "1px solid #0e1328" }}>
+ <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
               <thead>
                 <tr style={{ backgroundColor: "#0e1328", color: "#ffffff" }}>
                   {table.columns.map((col, cIndex) => (
-                    <th key={cIndex} style={{ padding: "10px", border: "1px solid #0e1328", textAlign: "left" }}>
+                    <th key={cIndex} style={{ padding: "12px 16px", textAlign: "left" }}>
                       {previewMode ? col : (
-                        <input value={col} onChange={(e) => updateColumnName(tIndex, cIndex, e.target.value)} style={{ background: "transparent", color: "#fff", border: "none", width: "100%", outline: "none" }} />
+                        <input value={col} onChange={(e) => updateColumnName(tIndex, cIndex, e.target.value)} style={{ background: "transparent", color: "#fff", border: "none", width: "100%", fontWeight: "600", fontSize: "14px", outline: "none" }} />
                       )}
                     </th>
                   ))}
@@ -246,11 +245,11 @@ export default function DayCard({ id, dayNumber = 1, entries = [], onUpdate, onD
               </thead>
               <tbody>
                 {table.rows.map((row, rIndex) => (
-                  <tr key={rIndex}>
+                  <tr key={rIndex} style={{ borderBottom: "1px solid #e5e7eb" }}>
                     {row.map((cell, cIndex) => (
-                      <td key={cIndex} style={{ padding: "8px", border: "1px solid #0e1328", backgroundColor: "#ffffff", color: "#000000" }}>
+                      <td key={cIndex} style={{ padding: "12px 16px", backgroundColor: "#fff", color: "#000" }}>
                         {previewMode ? cell : (
-                          <input value={cell} onChange={(e) => updateCell(tIndex, rIndex, cIndex, e.target.value)} style={{ background: "transparent", border: "none", outline: "none", width: "100%" }} />
+                          <input value={cell} onChange={(e) => updateCell(tIndex, rIndex, cIndex, e.target.value)} style={{ background: "transparent", border: "none", outline: "none", width: "100%", color: "#000", fontSize: "14px" }} />
                         )}
                       </td>
                     ))}
@@ -258,7 +257,6 @@ export default function DayCard({ id, dayNumber = 1, entries = [], onUpdate, onD
                 ))}
               </tbody>
             </table>
-
             {!previewMode && (
               <div style={{ display: "flex", gap: "1rem", marginTop: "4px", fontSize: "14px" }}>
                 <button onClick={() => addRow(tIndex)} style={{ color: "#2563eb" }}>+ Add Row</button>
@@ -268,7 +266,6 @@ export default function DayCard({ id, dayNumber = 1, entries = [], onUpdate, onD
             )}
           </div>
         ))}
-
         {!previewMode && <button onClick={addTable} style={{ fontSize: "14px", color: "#2563eb" }}>+ Add Table</button>}
       </div>
     </div>
